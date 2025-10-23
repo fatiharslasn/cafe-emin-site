@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Emin — Taze Kahve & Lezzetli Atıştırmalıklar</title>
+  <meta name="description" content="Cafe Emin: Taze kahve, sıcak atıştırmalıklar ve samimi bir ortam. Bornova’da her gün 08:00–23:00 arası hizmetteyiz.">
+
+  <!-- Tema rengi (mobil tarayıcı üst bar rengi) -->
+  <meta name="theme-color" content="#7c2d12" />
+
+  <!-- Favicon (küçük simge) -->
+  <!-- Elinde 64×64 ve 512×512 varsa aşağıdaki satırları aynı dosya adlarıyla güncelleyebilirsin -->
+  <link rel="icon" href="assets/logo.png?v=5" sizes="64x64" type="image/png"/>
+  <link rel="icon" href="assets/logo.png?v=5" sizes="512x512" type="image/png"/>
+  <link rel="apple-touch-icon" href="assets/logo.png?v=5"/>
+
+  <!-- Preconnect / DNS Hint -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Yazı tipleri -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Logoyu erken yükle (mobilde hızlı görünsün) -->
+  <link rel="preload" as="image" href="assets/logo.png?v=5" imagesrcset="assets/logo.png?v=5 1x, assets/logo.png?v=5 2x" />
+
+  <!-- Open Graph / Sosyal kartlar -->
+  <meta property="og:title" content="Cafe Emin — Taze Kahve & Lezzetli Atıştırmalıklar">
+  <meta property="og:description" content="Bornova’da taze kahve ve lezzetli atıştırmalıklar. Her gün 08:00–23:00.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{
+      --brand:#7c2d12; /* kahverengi */
+      --wine:#b91c1c;  /* vurgu */
+    }
+    body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .title{ font-family: "Playfair Display", serif; }
+    .sticky-menu{ position: sticky; top:0; z-index:50; backdrop-filter:blur(6px); background-color:rgba(255,255,255,.9); }
+    /* Not: CDN ile @apply çalışmaz; element sınıfları zaten görsel stili veriyor. */
+    .btn{ /* placeholder */ }
+    .btn-outline{ /* placeholder */ }
+    .btn-ghost{ /* placeholder */ }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- ÜST MENÜ -->
+  <header class="sticky-menu border-b border-gray-200" role="banner">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a class="flex items-center gap-3" href="#home" aria-label="Cafe Emin ana sayfa">
+        <!-- LOGO (kritik görsel; lazy değil) -->
+        <!-- Header logosu önerilen kaynağın gerçek boyutu: 320×80 (4:1). Görünen ~40px (2× yoğunluk). -->
+        <img
+          src="assets/logo.png?v=5"
+          alt="Cafe Emin Logo"
+          class="h-10 w-auto"
+          width="320" height="80"
+          fetchpriority="high" decoding="async"
+        />
+        <span class="title text-xl text-[var(--brand)]">Cafe Emin</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6" aria-label="Birincil">
+        <a href="#home" class="hover:text-[var(--wine)]">Ana Sayfa</a>
+        <a href="#menu" class="hover:text-[var(--wine)]">Menü</a>
+        <a href="#gallery" class="hover:text-[var(--wine)]">Fotoğraflar</a>
+        <a href="#contact" class="hover:text-[var(--wine)]">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4">
+
+    <!-- HERO -->
+    <section id="home" class="min-h-[72vh] md:min-h-[78vh] grid md:grid-cols-2 items-center gap-10 py-10">
+      <div>
+        <h1 class="title text-4xl md:text-5xl font-bold mb-4">
+          Taze Kahve & Lezzetli Atıştırmalıklar
+        </h1>
+        <p class="text-lg md:text-xl mb-6">
+          Gün boyu taze kahve, sıcak atıştırmalıklar ve samimi bir ortam.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a class="inline-block rounded-lg px-5 py-3 text-white bg-[var(--wine)] hover:bg-red-700 transition"
+             href="https://wa.me/905348909530?text=Merhaba%20Cafe%20Emin%2C%20sipari%C5%9F%20vermek%20istiyorum."
+             aria-label="WhatsApp ile sipariş ver">
+             WhatsApp ile Sipariş Ver
+          </a>
+          <a class="inline-block rounded-lg px-5 py-3 border border-[var(--wine)] text-[var(--wine)] hover:bg-[var(--wine)] hover:text-white transition"
+             href="#menu">Menüyü Gör</a>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <!-- LOGO (sayfa içi büyük) -->
+        <!-- Önerilen kaynak boyutu: 1024×256 (4:1). Görünen yükseklik: ~256px (md:h-64). -->
+        <img
+          src="assets/logo.png?v=5"
+          alt="Cafe Emin Logo büyük"
+          class="h-48 md:h-64 w-auto"
+          width="1024" height="256"
+          sizes="(min-width: 768px) 16rem, 12rem"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- MENÜ -->
+    <section id="menu" class="py-12">
+      <h2 class="title text-3xl font-bold mb-6 text-center">Menü</h2>
+
+      <!-- Menü pano görseli: önerilen kaynak 1600×900 JPG (~75–85 kalite) -->
+      <img
+        src="assets/menu-board.jpg?v=5"
+        alt="Menü panosu"
+        class="w-full h-auto rounded-lg shadow mb-8"
+        width="1600" height="900"
+        loading="lazy" decoding="async"
+      />
+
+      <div id="menu-list" class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg shadow p-5">
+          <h3 class="font-semibold text-lg mb-3 text-[var(--brand)]">Yiyecekler</h3>
+          <ul class="space-y-1 text-sm">
+            <li>• Sucuklu Yumurta</li>
+            <li>• Menemen</li>
+            <li>• Kahvaltı Tabağı</li>
+            <li>• Tost (Karışık / Sade)</li>
+            <li>• Börek Çeşitleri</li>
+            <li>• Mantı</li>
+            <li>• Makarna</li>
+            <li>• Parmak Dilim Patates</li>
+            <li>• Pizza</li>
+            <li>• Izgara Köfte</li>
+            <li>• Tavuk Şiş Ekmek Arası</li>
+            <li>• Günün Çorbası</li>
+            <li>• Günün Tatlısı</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-lg shadow p-5">
+          <h3 class="font-semibold text-lg mb-3 text-[var(--brand)]">İçecekler</h3>
+          <ul class="space-y-1 text-sm">
+            <li>• Çay</li>
+            <li>• Sütlü Kahve</li>
+            <li>• Latte (Sıcak / Soğuk)</li>
+            <li>• Türk Kahvesi</li>
+            <li>• Kapuçino (Sıcak / Soğuk)</li>
+            <li>• Moka (Sıcak / Soğuk)</li>
+            <li>• Salep</li>
+            <li>• Sıcak Çikolata</li>
+            <li>• Bitki Çayları</li>
+            <li>• Maden Suyu</li>
+            <li>• Su</li>
+            <li>• Fanta / Kola</li>
+            <li>• Soğuk Çay / Limonata / Ayran</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERİ -->
+    <section id="gallery" class="py-12">
+      <h2 class="title text-3xl font-bold mb-6 text-center">Galeri</h2>
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img
+          src="assets/menu-board.jpg?v=5"
+          class="rounded-lg shadow"
+          alt="Cafe Emin iç mekân"
+          width="1600" height="900"
+          loading="lazy" decoding="async"
+        />
+        <img
+          src="assets/logo.png?v=5"
+          class="rounded-lg shadow bg-white p-6"
+          alt="Cafe Emin logosu"
+          width="1024" height="256"
+          loading="lazy" decoding="async"
+        />
+      </div>
+    </section>
+
+  </main>
+
+  <!-- İLETİŞİM & HARİTA -->
+  <section id="contact" class="mt-10 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="title text-3xl font-bold mb-6 text-center">İletişim</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-3 text-center md:text-left">
+          <p><strong>Adres:</strong> Atatürk Mah. Hürriyet Caddesi No:57/A, Bornova</p>
+          <p>
+            <strong>Telefon:</strong>
+            <a class="underline-offset-2 hover:underline" href="tel:02323883969" aria-label="0232 388 39 69 ara"> 0232 388 39 69</a>
+            &nbsp;•&nbsp;
+            <a class="underline-offset-2 hover:underline" href="tel:+905348909530" aria-label="0534 890 95 30 ara"> 0534 890 95 30</a>
+          </p>
+          <p><strong>Çalışma Saatleri:</strong> Her gün 08:00 – 23:00</p>
+
+          <div class="flex flex-wrap gap-3 pt-1">
+            <a class="inline-block rounded-lg px-5 py-3 text-white bg-[var(--wine)] hover:bg-red-700 transition"
+               href="https://wa.me/905348909530?text=Merhaba%20Cafe%20Emin%2C%20bilgi%20almak%20istiyorum.">
+               WhatsApp’tan Yaz
+            </a>
+            <a class="inline-block rounded-lg px-5 py-3 border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
+               target="_blank" rel="noopener"
+               href="https://maps.app.goo.gl/Vxx4sPjiSb9TF2zC8">
+               Haritada Aç
+            </a>
+          </div>
+        </div>
+
+        <!-- Embed: adres ile -->
+        <div class="w-full h-[360px] rounded-lg overflow-hidden shadow">
+          <iframe
+            src="https://www.google.com/maps?q=Atat%C3%BCrk%20Mah.%20H%C3%BCrriyet%20Caddesi%20No:57%2FA%2C%20Bornova&output=embed"
+            width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade" title="Cafe Emin konum haritası"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white text-sm text-center py-4">
+    © <span id="y"></span> Cafe Emin. Tüm hakları saklıdır.
+  </footer>
+
+  <script>
+    // Yıl
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
